@@ -1,32 +1,106 @@
+//My buttons
 var startBtn = document.getElementById('start-quiz');
 var highscoresBtn = document.getElementById('highscore-link');
 var homeBtn = document.getElementById('home-btn');
 var clearHighscoresBtn = document.getElementById('clear-scores');
+
+//My screens
+var homeScreen = document.querySelector('.start-screen');
+var finishScreen = document.querySelector('.finish-screen');
+var highscoreScreen = document.querySelector('.highscore-screen');
+var questionScreen = document.querySelector('.question-screen');
+
+//My updating items
+var highscores = document.querySelector('.highscores');
+var questionTitle = document.querySelector('.question-title');
+var questionAnswers = document.querySelector('.question-answers');
+
+//My variables
 var quizLength = 10;
+var correctItems = 0;
 var currentQuiz = [];
+var currentQuestion = 0;
 
 //Start the quiz
 function startQuiz() {
     //Get random questions up to the quiz list length (No duplicates)
+    var tempArray = [...quiz];
+    currentQuiz = [];
+    for(var i = 0; i < quizLength; i++)
+    {
+        //Get a random box within the tempArray length
+        var randomBox = Math.floor(Math.random() * tempArray.length);
+
+        //Add it to the current quiz
+        currentQuiz.push(tempArray[randomBox]);
+
+        //Remove one element starting from current selected item
+        tempArray.splice(randomBox, 1);
+    }
+
     //Put them on the first question
+    showQuestion();
+    getCurrentQuestion();
     //Start the timer
+}
+
+function getCurrentQuestion() {
+    var quizItem = currentQuiz[currentQuestion];
+    questionTitle.textContent = "Question " + (currentQuestion + 1) + ": " + quizItem.question;
+    questionAnswers.innerHTML = '';
+    quizItem.possibleAnswers.forEach((item, index) => {
+        var questionAnswer = document.createElement("div");
+        questionAnswer.textContent = (index + 1) + ". " + item;
+        questionAnswer.setAttribute('value', index);
+        questionAnswers.append(questionAnswer);
+    });
+}
+
+function nextQuestion() {
+    currentQuestion++;
+    getCurrentQuestion();
 }
 
 //Hide other screens and show highscores
 function showHighscores() {
-
+    homeScreen.classList.add('d-none');
+    finishScreen.classList.add('d-none');
+    questionScreen.classList.add('d-none');
+    highscoreScreen.classList.remove('d-none');
 }
 
 //Hide other screens and show home
 function showHome() {
+    highscoreScreen.classList.add('d-none');
+    finishScreen.classList.add('d-none');
+    questionScreen.classList.add('d-none');
+    homeScreen.classList.remove('d-none');
+}
 
+//Hide other screens and show question screen
+function showQuestion() {
+    homeScreen.classList.add('d-none');
+    finishScreen.classList.add('d-none');
+    highscoreScreen.classList.add('d-none');
+    questionScreen.classList.remove('d-none');
+}
+
+function showFinishScreen() {
+    homeScreen.classList.add('d-none');
+    highscoreScreen.classList.add('d-none');
+    questionScreen.classList.add('d-none');
+    finishScreen.classList.remove('d-none');
 }
 
 //Clear Highscores
 function clearHighscores() {
-
+    highscores.innerHTML = '';
+    localStorage.removeItem('highscores');
 }
 
+showHome();
+
+//Awesome event listeners
 startBtn.addEventListener("click", startQuiz);
 highscoresBtn.addEventListener("click", showHighscores);
 homeBtn.addEventListener("click", showHome);

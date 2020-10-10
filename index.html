@@ -19,12 +19,12 @@
         Start quiz button
         Quiz Items
         High Score Screen-->
-    <main>
-        <header class="d-flex justify-content-between">
-            <a id="highscore-link" href="#">View Highscores</a>
-            <span id="timer-display">Time: <span id="time-left"></span></span>
-        </header>
-        <section class="content d-flex justify-content-center start-screen">
+    <header class="d-flex justify-content-between">
+        <a id="highscore-link" href="#">View Highscores</a>
+        <span id="timer-display">Time: <span id="time-left"></span></span>
+    </header>
+    <main class="d-flex justify-content-center ">
+        <section class="start-screen">
             <div class="card mx-auto">
                 <div class="card-body">
                     <h4 class="card-title">Javascript Quiz Challenge</h4>
@@ -35,7 +35,15 @@
                 </div>
             </div>
         </section>
-        <section class="content d-flex justify-content-center finish-screen">
+        <section class="question-screen d-none">
+            <div class="card mx-auto">
+                <div class="card-body">
+                    <h4 class="card-title question-title">Javascript Quiz Challenge</h4>
+                    <p class="card-text question-answers"></p>
+                </div>
+            </div>
+        </section>
+        <section class="finish-screen d-none">
             <div class="card mx-auto">
                 <div class="card-body">
                     <h4 class="card-title">All done</h4>
@@ -46,7 +54,7 @@
                 </div>
             </div>
         </section>
-        <section class="content d-flex justify-content-center highscore-screen">
+        <section class="highscore-screen d-none">
             <div class="card mx-auto">
                 <div class="card-body">
                     <h4 class="card-title">Highscores</h4>
