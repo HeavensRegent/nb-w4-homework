@@ -2,7 +2,7 @@
 
 View the site here
 ```
-https://heavensregent.github.io/nb-w4-homework/
+[Javascript Quiz](https://heavensregent.github.io/nb-w4-homework/)
 ```
 
 ## Your Task
