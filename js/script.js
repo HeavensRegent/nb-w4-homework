@@ -25,7 +25,7 @@ var quizLength = 10; //Number of questions
 var correctItems = 0; //How many they got right
 var currentQuiz = [];
 var currentQuestion = 0;
-var quizTimeLimit = 60; //In seconds
+var quizTimeLimit = 45; //In seconds
 var timeElapsed = 0;
 var timer;
 var feedbackTiemout; //Allows me to reset if they click answeres to quickly
@@ -353,7 +353,7 @@ var quiz = [
     {
         question: 'What will the following code return: Boolean(10 > 9)',
         possibleAnswers: ['true', 'NaN', 'false'],
-        correctAnswer: true,
+        correctAnswer: 0,
     },
     {
         question: 'Is JavaScript case-sensitive?',
