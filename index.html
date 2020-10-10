@@ -10,6 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
@@ -23,12 +24,13 @@
         <a id="highscore-link" href="#">View Highscores</a>
         <span id="timer-display">Time: <span id="time-left"></span></span>
     </header>
-    <main class="d-flex justify-content-center ">
+    <main class="d-flex justify-content-center mw-50">
         <section class="start-screen">
             <div class="card mx-auto">
                 <div class="card-body">
                     <h4 class="card-title">Javascript Quiz Challenge</h4>
-                    <p class="card-text">Today you will be taking a timed quiz.</p>
+                    <p class="card-text">Today you will be taking a timed quiz. You have 45 seconds to complete the
+                        quiz. Any wrong answers result in a penalty of 10 seconds.</p>
                 </div>
                 <div class="card-body">
                     <a href="#" class="card-link" id="start-quiz">Start Quiz</a>
@@ -38,8 +40,12 @@
         <section class="question-screen d-none">
             <div class="card mx-auto">
                 <div class="card-body">
-                    <h4 class="card-title question-title">Javascript Quiz Challenge</h4>
+                    <h4 class="card-title question-title"></h4>
                     <p class="card-text question-answers"></p>
+                </div>
+                <div id="feedback" class="card-body d-none">
+                    <hr />
+                    <span id="questionResult"></span>
                 </div>
             </div>
         </section>
@@ -47,9 +53,11 @@
             <div class="card mx-auto">
                 <div class="card-body">
                     <h4 class="card-title">All done</h4>
-                    <p class="card-text">Your final score is <span id="score"></span></p>
+                    <p class="card-text"><span id="result"></span></p>
                 </div>
                 <div class="card-body">
+                    <label for="initials">Enter initials</label>
+                    <input type="text" id="initials" />
                     <a href="#" class="card-link" id="submit-score">Submit</a>
                 </div>
             </div>
