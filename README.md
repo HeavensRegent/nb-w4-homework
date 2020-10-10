@@ -1,5 +1,10 @@
 # 04 Web APIs: Code Quiz
 
+View the site here
+```
+https://heavensregent.github.io/nb-w4-homework/
+```
+
 ## Your Task
 
 As you proceed in your journey to becoming a full-stack web developer, it’s likely that you’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges. 
@@ -33,11 +38,11 @@ THEN I can save my initials and score
 ```
 
 
-## Mock-Up
+## Screenshot
 
-The following animation demonstrates the application functionality:
+The following picture shows the opening screen:
 
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
+![code quiz](./Assets/screenshot.png)
 
 
 ## Grading Requirements
