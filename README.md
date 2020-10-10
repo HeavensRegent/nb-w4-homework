@@ -1,9 +1,7 @@
 # 04 Web APIs: Code Quiz
 
 View the site here
-```
 [Javascript Quiz](https://heavensregent.github.io/nb-w4-homework/)
-```
 
 ## Your Task
 
